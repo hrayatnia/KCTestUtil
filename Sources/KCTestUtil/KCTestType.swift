@@ -1,3 +1,8 @@
 public enum KCTestType: String {
-    case unitTest
+    case unit
+    case stress
+    case ui
+    case integration
+    case monkey
+    case screenshot
 }
