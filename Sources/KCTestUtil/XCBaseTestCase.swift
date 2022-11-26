@@ -2,13 +2,9 @@ import XCTest
 
 open class XCBaseTestCase: XCTestCase {
     
-    override open func setUp() {
-        super.setUp()
+    open override func setUpWithError() throws {
+        try super.setUpWithError()
         guard let `self` = self as? FlagLoader else { return }
-        do {
-            try self.precondition()
-        } catch let error {
-            preconditionFailure(error.localizedDescription)
-        }
+        try self.precondition()
     }
 }

@@ -3,10 +3,11 @@ import XCTest
 
 final class XCScreenshotTestCaseTest: XCScreenshotTestCase {
     
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
         KCTestUtilStorage.load(data: [KCTestType.screenshot.rawValue: true] as! [String: AnyObject])
+        try super.setUpWithError()
     }
+    
     func testFlag() {
         XCTAssert(self.flag)
     }
